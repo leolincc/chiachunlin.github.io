@@ -333,6 +333,12 @@ section {
   flex-direction: column;
 }
 
+.project-details-container {
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+}
+
 .article-container {
   display: flex;
   text-align: initial;
