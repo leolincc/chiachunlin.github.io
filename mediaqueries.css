@@ -44,18 +44,62 @@
     }
     .about-containers {
       margin-top: 0;
+      flex-direction: column;
+      gap: 1.5rem;
+      display: flex;
     }
     .project-details-container {
       flex-direction: column;
       align-items: center;
     }
     
-    .about-containers {
-      gap: 1.5rem;
+    .details-container:nth-child(1) {
+    order: 2;  /* Experience section */
     }
-    
+
+    .details-container:nth-child(2) {
+    order: 1;  /* Education section */
+    }
     .details-container {
       width: 100%;
+    }
+    .article-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      justify-content: center;
+    }
+  
+    article {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      text-align: left;
+    }
+    
+    /* Adjust project section */
+    .project-details-container .about-containers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .color-container {
+      width: 100%;
+      height: auto;
+    }
+
+    .project-img {
+      width: 100%;
+      height: auto;
+      max-width: 250px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    /* Adjust projects to 2 per row on smaller screens */
+    .project-details-container .about-containers {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
   
@@ -141,6 +185,17 @@
       width: 7rem;
       padding: 0.8rem;
       font-size: 0.9rem;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    /* Single column for projects on very small screens */
+    .project-details-container .about-containers {
+      grid-template-columns: 1fr;
+    }
+  
+    /* Single column for experience items */
+    .article-container {
+      grid-template-columns: 1fr;
     }
   }
 
